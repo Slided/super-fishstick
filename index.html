@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="@areyouanxious on discord">
+<link rel="canonical" href="http://LilUziVert.lol/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LilUziVert.lol">
+<meta property="og:description" content="@areyouanxious on discord">
+<meta property="og:url" content="https://LilUziVert.lol/">
+<meta property="og:site_name" content="LilUziVert.lol">
+<meta property="og:image" content="metacard.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="@areyouanxious on discord">
+<meta name="twitter:title" content="LilUziVert.lol">
+<meta name="twitter:image" content="metacard.png">
+    
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LilUziVert.lol | @areyouanxious</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://online-fonts.com/sites/default/files/2021-09/burbankbigcondensed_bold.otf">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/vaakash/socializer@f794acd/css/socializer.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css">
+
+<style>
+/* --- FADE-IN OVERLAY STYLES --- */
+#initialOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 1;
+    z-index: 10000;
+    transition: opacity 2s ease-out; /* The fade-out transition */
+    cursor: pointer;
+}
+
+#initialOverlay.fade-out {
+    opacity: 0;
+    pointer-events: none; 
+}
+
+/* Custom font and animation for "Click to Continue" */
+#initialOverlay p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    /* Using your title class for the custom font */
+    font-family: var(--title-font, 'Aldrich', sans-serif); 
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from { opacity: 0.7; }
+    to { opacity: 1; }
+}
+
+/* --- HIDING THE AUDIO ELEMENT (AS REQUESTED) --- */
+audio {
+    display: none;
+}
+
+/* --- CUSTOM AUDIO CONTROLLER STYLES --- */
+#audioController {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 5000;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 250px;
+    color: white;
+    font-family: sans-serif;
+    opacity: 0; /* Starts hidden */
+    transition: opacity 0.5s;
+}
+#audioController.visible {
+    opacity: 1;
+}
+
+#controllerButtons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.controller-btn {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 0;
+    transition: background 0.2s;
+}
+
+.controller-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Slider styling (basic) */
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    background: #555;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+#volumeContainer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+</style>
+
+</head>    
+<body>
+    <div id="initialOverlay">
+        <p class="titlefr">@areyouanxious</p>
+    </div>
+
+    <div class="background-video-container">
+        <video id="bgVideo" class="background-video" loop muted playsinline> 
+            <source src="bg.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="content">
+        <a href="https://discord.com/users/189658413955809280" target="_blank" rel="noopener noreferrer">    
+            <img id="logo" class="gifinthemiddle" src="https://i.pinimg.com/originals/71/53/eb/7153ebb8797da29134bb6a52689618a0.gif" alt="hello &#9829;">
+        </a>
+        <p class="titlefr">LilUziVert.lol</p>
+        <hr style="color: white; opacity: 80%;">
+        <div class="socializer" data-features="64px,circle,float,bg-none,sw-icon-1,pad" data-meta-link="" data-meta-title="" data-sites="discord,tiktok,telegram,snapchat" data-meta-discord="https://discord.com/users/189658413955809280" data-meta-tiktok="https://tiktok.com/@loserant" data-meta-telegram="https://t.me/bmwauctionhouse" data-meta-snapchat="https://snapchat.com/add/loserant"></div>
+    
+            <script src="https://cdn.jsdelivr.net/gh/vaakash/socializer@f794acd/js/socializer.min.js"></script>
+<script>
+(function(){
+    socializer( '.socializer' );
+}());
+</script>
+    </div>
+
+<audio id="bgm" loop preload="auto" muted> 
+  <source src="lemonglow.mp3" type="audio/mpeg">
+</audio>
+
+
+<div id="audioController">
+    <div id="progressContainer">
+        <input type="range" id="seekSlider" value="0" min="0" max="100">
+    </div>
+    <div id="controllerButtons">
+        <button id="playPauseBtn" class="controller-btn"><i class="fas fa-play"></i></button>
+        <button id="muteBtn" class="controller-btn"><i class="fas fa-volume-up"></i></button>
+        <div id="volumeContainer">
+            <i class="fas fa-volume-down"></i>
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.75">
+        </div>
+    </div>
+</div>
+
+
+<script>
+const audio = document.getElementById("bgm");
+const bgVideo = document.getElementById("bgVideo");
+const initialOverlay = document.getElementById("initialOverlay");
+const audioController = document.getElementById("audioController");
+
+// Controller elements
+const playPauseBtn = document.getElementById("playPauseBtn");
+const muteBtn = document.getElementById("muteBtn");
+const volumeSlider = document.getElementById("volumeSlider");
+const seekSlider = document.getElementById("seekSlider");
+
+// --- INITIAL SETUP ---
+// Set initial volume to 0.75 (75%)
+audio.volume = 0.75;
+
+
+// --- 1. INITIAL CLICK HANDLER (FADE-IN AND START MEDIA) ---
+initialOverlay.addEventListener("click", () => {
+    // A. Start Media
+    bgVideo.play();
+    audio.muted = false;
+    audio.play();
+
+    // B. Visual Effects
+    initialOverlay.classList.add('fade-out');
+    audioController.classList.add('visible'); // Show the controller
+
+    // C. Remove overlay after fade-out
+    setTimeout(() => {
+        initialOverlay.remove();
+    }, 2000); 
+
+}, { once: true });
+
+
+// --- 2. AUDIO CONTROLLER LOGIC ---
+
+// Play/Pause Toggle
+playPauseBtn.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.play();
+        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+    } else {
+        audio.pause();
+        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+    }
+});
+
+// Mute/Unmute Toggle
+muteBtn.addEventListener('click', () => {
+    audio.muted = !audio.muted;
+    if (audio.muted) {
+        muteBtn.innerHTML = '<i class="fas fa-volume-off"></i>';
+    } else {
+        muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+    }
+});
+
+// Volume Control
+volumeSlider.addEventListener('input', () => {
+    audio.volume = volumeSlider.value;
+    // Unmute if volume is adjusted
+    if (audio.muted && audio.volume > 0) {
+        audio.muted = false;
+        muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+    }
+});
+
+// Track Seeker Update (while playing)
+audio.addEventListener('timeupdate', () => {
+    const value = (audio.currentTime / audio.duration) * 100;
+    if (!isNaN(value)) {
+        seekSlider.value = value;
+    }
+});
+
+// Track Seeking (user interaction)
+seekSlider.addEventListener('input', () => {
+    // Calculate new time based on slider value
+    const seekTo = audio.duration * (seekSlider.value / 100);
+    audio.currentTime = seekTo;
+});
+
+// Set the initial play button icon (should be 'play' because the audio starts paused until click)
+playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+</script>
+
+</body>
+
+</html>
+
+
